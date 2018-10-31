@@ -1,6 +1,4 @@
-/**
- ** Change to the examples directory so this program can run as a service.
- **/
+
 process.chdir(__dirname);
 
 var fs = require ("fs");
@@ -19,8 +17,9 @@ if (process.argv[2] == "--add") {
         name: "nMon Agent",
         nodePath: path.join(__dirname, "nodejs", "node.exe"),
         programPath: path.join(__dirname, "main.js"),
+		programArgs: [process.argv[3], process.argv[4]]
 
-        
+
 	};
 
 	service.add ("nMon Agent", options, function(error) {

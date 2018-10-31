@@ -55,13 +55,15 @@ function intervalFunc() {
         post_data = post_data + "{agent_version}" + agent_version + "{/agent_version}";
 
         // serverkey
-        serverkey_file = fs.readFileSync(path.join(__dirname, 'serverkey.txt'));
-        serverkey = serverkey_file.toString();
+        //serverkey_file = fs.readFileSync(path.join(__dirname, 'serverkey.txt'));
+        //serverkey = serverkey_file.toString();
+        serverkey = process.argv[2];
         post_data = post_data + "{serverkey}" + serverkey + "{/serverkey}";
 
         // gateway
-        gateway_file = fs.readFileSync(path.join(__dirname, 'gateway.txt'));
-        gateway = gateway_file.toString();
+        //gateway_file = fs.readFileSync(path.join(__dirname, 'gateway.txt'));
+        //gateway = gateway_file.toString();
+        gateway = process.argv[3];
         post_data = post_data + "{gateway}" + gateway + "{/gateway}";
 
         // time #TBD
