@@ -11,7 +11,7 @@ goto check_Permissions
         net stop "nMon Agent"
 
         echo Removing nMon Agent Service
-        %~dp0nodejs\node.exe %~dp0service.js --remove
+        "%~dp0nodejs\node.exe" "%~dp0service.js" --remove
 
         echo Done
 

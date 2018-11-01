@@ -13,11 +13,11 @@ goto check_Permissions
 
         echo Removing previous nMon Agent Service
         net stop "nMon Agent"
-        %~dp0nodejs\node.exe %~dp0service.js --remove
+        "%~dp0nodejs\node.exe" "%~dp0service.js" --remove
 
 
         echo Configuring nMon Agent Service
-        %~dp0nodejs\node.exe %~dp0service.js --add %serverkey% %gateway%
+        "%~dp0nodejs\node.exe" "%~dp0service.js" --add %serverkey% %gateway%
 
         echo Starting nMon Agent Service
         net start "nMon Agent"
