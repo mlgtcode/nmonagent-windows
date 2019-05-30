@@ -14,6 +14,22 @@ service.run (function () {
     service.stop (0);
 });
 
+var logStream = fs.createWriteStream("agent.log",{flags:'a'});
+var log_file_rejection=fs.createWriteStream('rejection.log',{flags:'a'});
+var log_file_exception=fs.createWriteStream('exception.log',{flags:'a'});
+
+logStream.write(new Date ().toString () + " - Agent started" + "\n");
+
+
+process.on('uncaughtException', function(err) {
+	log_file_exception.write('Caught exception: '+err + '\n');
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  log_file_rejection.write('unhandledRejection: '+reason + '\n');
+});
+
+
 //service.run (logStream, function () {
 //		service.stop (0);
 //});
@@ -51,7 +67,7 @@ function intervalFunc() {
 
 
         // agent_version #OK
-        agent_version = "2.0.0";
+        agent_version = "2.1";
         post_data = post_data + "{agent_version}" + agent_version + "{/agent_version}";
 
         // serverkey
