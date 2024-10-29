@@ -18,7 +18,7 @@
   "homepage": "https://github.com/codeniner/nmonagent-windows-2#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "os": "^0.1.1",
+    "os": "^0.1.2",
     "os-service": "^2.2.0",
     "path": "^0.12.7",
     "request": "^2.88.0",
