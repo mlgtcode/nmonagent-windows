@@ -102,6 +102,16 @@ The service requires two arguments:
 - ✅ Improved logging for HTTP errors
 - ✅ Added .gitignore for better repository management
 
+## Security
+
+### Known Issues
+
+- The `pkg` package (used as a dev dependency for building executables) has a moderate severity vulnerability (GHSA-22r3-9w55-cj54) related to local privilege escalation during the build process. This does not affect the runtime security of the built executable, as pkg is only used during the build phase and is not included in the final distributable.
+
+### Auditing
+
+Run `npm audit` to check for vulnerabilities in dependencies. The application uses well-maintained packages with active security monitoring.
+
 ## License
 
 MIT License - see LICENSE file for details
