@@ -5,7 +5,7 @@ const path = require('path');
 const os = require('os');
 const si = require('systeminformation');
 const fs = require("fs");
-var request = require('request');
+const axios = require('axios');
 var service = require ("os-service");
 
 
@@ -200,7 +200,13 @@ function intervalFunc() {
 
 
         if(gateway != "") {
-            request.post(gateway).form({data: post_data})
+            try {
+                await axios.post(gateway, new URLSearchParams({ data: post_data }), {
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                });
+            } catch (error) {
+                log_file_exception.write('Error posting data: ' + error.message + '\n');
+            }
         }
 
         //console.log(allData);
