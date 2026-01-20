@@ -22,7 +22,7 @@
     "os-service": "^2.2.0",
     "path": "^0.12.7",
     "request": "^2.88.2",
-    "systeminformation": "^5.23.5",
+    "systeminformation": "^5.30.5",
     "url": "^0.11.4"
   }
 }
