@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/codeniner/nmonagent-windows-2#readme",
   "dependencies": {
-    "axios": "^1.13.2",
+    "axios": "^1.13.3",
     "fs": "0.0.1-security",
     "os": "^0.1.2",
     "os-service": "^2.2.0",
